@@ -12,7 +12,13 @@ alert(`A seguir, nosso menu:
     (3) Refrigerante – R$ 5
     (4) Batata Frita – R$ 12`)
 //Escolhas do menu
-let pedido1 = parseInt(prompt("Escolha o seu primerio prato 1/2/3/4/5(sair)"))
+let pedido1 = parseInt(prompt(`
+    (1) Hambúrguer – R$ 20
+    (2) Pizza – R$ 35
+    (3) Refrigerante – R$ 5
+    (4) Batata Frita – R$ 12
+    Escolha o seu primerio prato 1/2/3/4/5(sair)
+    `))
 if (pedido1 === 5) {
     alert("Você saiu do site.")
 } else {
@@ -34,9 +40,14 @@ if (pedido1 === 5) {
             valor1 = 12
             break
     }
-
-    let pedido2 = parseInt(prompt("Escolha o seu segundo prato 1/2/3/4/5(sair)"))
-    if (pedido2 === 5) {
+let pedido2 = parseInt(prompt(`
+    (1) Hambúrguer – R$ 20
+    (2) Pizza – R$ 35
+    (3) Refrigerante – R$ 5
+    (4) Batata Frita – R$ 12
+    Escolha o seu segundo prato 1/2/3/4/5(sair)
+    `))
+    if (pedido2 === 5 ) {
         alert("Você saiu do site.")
     } else {
 
@@ -58,7 +69,13 @@ if (pedido1 === 5) {
                 valor2 = 12
                 break
         }
-        let pedido3 = parseInt(prompt("Escolha o seu terceiro prato 1/2/3/4/5(sair)"))
+let pedido3 = parseInt(prompt(`
+    (1) Hambúrguer – R$ 20
+    (2) Pizza – R$ 35
+    (3) Refrigerante – R$ 5
+    (4) Batata Frita – R$ 12
+    Escolha o seu terceiro prato 1/2/3/4/5(sair)
+    `))
         if (pedido3 === 5) {
             alert("Você saiu do site.")
         } else {
@@ -81,48 +98,48 @@ if (pedido1 === 5) {
                     break
             }
             //Calculos e o resultado final
-            let valorTotal = valor1 + valor2 + valor3
+            let valorTotal = parseFloat(valor1 + valor2 + valor3)
             if (perguntaEstudante === "s" && valorTotal > 50) {
-                let descontoEstudante = (valorTotal * 10) / 100
-                let descontoNormal = (valorTotal * 5) / 100
-                let final1 = valorTotal - (descontoEstudante + descontoNormal)
+                let descontoEstudante = parseFloat((valorTotal * 10) / 100)
+                let descontoNormal =parseFloat((valorTotal * 5) / 100)
+                let final1 = parseFloat(valorTotal - (descontoEstudante + descontoNormal))
                 alert(`Obrigado ${nome}!
-    Pratos escolhidos:
-    - ${pedido1} de R$${valor1.toFixed(2)}
-    - ${pedido2} de R$${valor2.toFixed(2)}
-    - ${pedido3} de R$${valor3.toFixed(2)}
-    Total sem desconto: R$${valorTotal.toFixed(2)}
-    Total com desconto: R$${final1.toFixed(2)}`)
-            } else if (perguntaEstudante === "s" && valorTotal < 50) {
-                let descontoEstudante = (valorTotal * 10) / 100
-                let final2 = valorTotal - descontoEstudante
+                    Pratos escolhidos:
+                    - ${pedido1} de R$${valor1.toFixed(2)}
+                    - ${pedido2} de R$${valor2.toFixed(2)}
+                    - ${pedido3} de R$${valor3.toFixed(2)}
+                    Total sem desconto: R$${valorTotal.toFixed(2)}
+                    Total com desconto: R$${final1.toFixed(2)}`)
+            } else if (perguntaEstudante === "s" && valorTotal <= 50) {
+                let descontoEstudante = parseFloat((valorTotal * 10) / 100)
+                let final2 = parseFloat(valorTotal - descontoEstudante)
                 alert(`Obrigado ${nome}!
-    Pratos escolhidos:
-    - ${pedido1} de R$${valor1.toFixed(2)}
-    - ${pedido2} de R$${valor2.toFixed(2)}
-    - ${pedido3} de R$${valor3.toFixed(2)}
-    Total sem desconto: R$${valorTotal.toFixed(2)}
-    Total com desconto: R$${final2.toFixed(2)}`)
+                    Pratos escolhidos:
+                    - ${pedido1} de R$${valor1.toFixed(2)}
+                    - ${pedido2} de R$${valor2.toFixed(2)}
+                    - ${pedido3} de R$${valor3.toFixed(2)}
+                    Total sem desconto: R$${valorTotal.toFixed(2)}
+                    Total com desconto: R$${final2.toFixed(2)}`)
             } else if (perguntaEstudante === "n" && valorTotal > 50) {
-                let descontoNormal = (valorTotal * 5) / 100
-                let final3 = valorTotal - descontoNormal
+                let descontoNormal = parseFloat((valorTotal * 5) / 100)
+                let final3 = parseFloat(valorTotal - descontoNormal)
                 alert(`Obrigado ${nome}!
-    Pratos escolhidos:
-    - ${pedido1} de R$${valor1.toFixed(2)}
-    - ${pedido2} de R$${valor2.toFixed(2)}
-    - ${pedido3} de R$${valor3.toFixed(2)}
-    Total sem desconto: R$${valorTotal.toFixed(2)}
-    Total com desconto: R$${final3.toFixed(2)}`)
-            } else if (perguntaEstudante === "n" && valorTotal < 50) {
-                let final4 = valorTotal
+                    Pratos escolhidos:
+                    - ${pedido1} de R$${valor1.toFixed(2)}
+                    - ${pedido2} de R$${valor2.toFixed(2)}
+                    - ${pedido3} de R$${valor3.toFixed(2)}
+                    Total sem desconto: R$${valorTotal.toFixed(2)}
+                    Total com desconto: R$${final3.toFixed(2)}`)
+            } else if (perguntaEstudante === "n" && valorTotal <= 50) {
+                let final4 = parseFloat(valorTotal)
                 alert(`Obrigado ${nome}!
-    Pratos escolhidos:
-    - ${pedido1} de R$${valor1.toFixed(2)}
-    - ${pedido2} de R$${valor2.toFixed(2)}
-    - ${pedido3} de R$${valor3.toFixed(2)}
-    Total sem desconto: R$${valorTotal.toFixed(2)}
-    Total com desconto: R$${final4.toFixed(2)}`)
-            }
+                    Pratos escolhidos:
+                    - ${pedido1} de R$${valor1.toFixed(2)}
+                    - ${pedido2} de R$${valor2.toFixed(2)}
+                    - ${pedido3} de R$${valor3.toFixed(2)}
+                    Total sem desconto: R$${valorTotal.toFixed(2)}
+                    Total com desconto: R$${final4.toFixed(2)}`)
+            } 
         }
     }
 }
